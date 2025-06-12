@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шотландія - Природа</title>
+    <link rel="stylesheet" href="../css/styles2.css">
+    <style>
+        /* Додаткові стилі для фону */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('../images/prd.jpg') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            color: #fff; /* Білий колір тексту для контрасту */
+        }
+        
+        .content-overlay {
+            background-color: rgba(0, 86, 179, 0.7); /* Напівпрозорий синій оверлей */
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .slide-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Напівпрозорий білий фон для контенту */
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            color: #333; /* Темний колір тексту для контенту */
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <header class="content-header">
+            <h1>Природа та географія Шотландії</h1>
+            <a href="../index.html" class="back-button">← На головну</a>
+        </header>
+        
+        <main class="content-main">
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <div class="image-placeholder" style="background-color: #e1f0fa;">🏔️</div>
+                    <h3>Гори</h3>
+                    <p>Грампіанські гори та найвища точка Британії — Бен-Невіс (1345м)</p>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="image-placeholder" style="background-color: #e1f0fa;">🌊</div>
+                    <h3>Озера (лохи)</h3>
+                    <p>Лох-Несс з легендою про чудовисько Несі</p>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="image-placeholder" style="background-color: #e1f0fa;">🏝️</div>
+                    <h3>Острови</h3>
+                    <p>Понад 790 островів, включаючи Оркнейські та Шетландські</p>
+                </div>
+            </div>
+            
+        </main>
+    </div>
+    
+    <script>
+        function uploadImage(inputId, previewId) {
+            const input = document.getElementById(inputId);
+            const preview = document.getElementById(previewId);
+            
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+</body>
+</html>
